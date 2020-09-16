@@ -1,3 +1,8 @@
+//variables for pages. Start
+var startPage = document.querySelector('.startScreen')
+var quizPage = document.querySelector('.quizPage')
+var scorePage = document.querySelector('.scorePage')
+
 // Make variables that I will call uppon.
 var questionText = document.querySelector("#theQuestion");
 var questionIndex = 0;
@@ -71,7 +76,10 @@ var theBatman = [
   },
 ];
 
-function chooseAnswer(){
+//Start Game
+quizPage.style.display = "none";
+
+function newQuestion(){
     // Put Question in Jumbotron
     questionText.textContent = theBatman[questionIndex].question;
     // fill first answer elements
@@ -93,49 +101,28 @@ function chooseAnswer(){
 }
 
 startBtn.addEventListener("click", function () {
-    chooseAnswer()
+    startPage.style.display = "none";
+    quizPage.style.display = "block";
+    newQuestion();
 });
 
 //answer buttons functions
 
+
+
+
+
 answerSelect.forEach(function(answerBtn){
+  
   answerBtn.addEventListener("click", function(){
     console.log("yay")
     questionIndex++
-    chooseAnswer()
+    newQuestion()
   })
 
 })
 
-// document.querySelector(".answerSelect").addEventListener("click", function(){
-//   questionIndex++
-//   console.log(questionIndex)
-//   chooseAnswer()
-// })
 
-// document.querySelector("#answerOne").addEventListener("click", function(){
-//     questionIndex++
-//     console.log(questionIndex)
-//     chooseAnswer()
-// })
-
-// document.querySelector("#answerTwo").addEventListener("click", function(){
-//   questionIndex++
-//   console.log(questionIndex)
-//   chooseAnswer()
-// })
-
-// document.querySelector("#answerThree").addEventListener("click", function(){
-//   questionIndex++
-//   console.log(questionIndex)
-//   chooseAnswer()
-// })
-
-// document.querySelector("#answerFour").addEventListener("click", function(){
-//   questionIndex++
-//   console.log(questionIndex)
-//   chooseAnswer()
-// })
 
 console.log(theBatman);
 
