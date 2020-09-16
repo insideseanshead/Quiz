@@ -2,7 +2,7 @@
 var questionText = document.querySelector("#theQuestion");
 var questionIndex = 0;
 var startBtn = document.querySelector("#start");
-
+var answerSelect = document.querySelectorAll(".answerSelect")
 
 var oneImg = document.querySelector("#imgOne");
 var oneText = document.querySelector("#pOne");
@@ -25,7 +25,7 @@ var fourTrue = " ";
 var theBatman = [
   {
     question:"In Batman the Animated Series who was the original voice of the joker?",
-    correctIndex: 2,
+    // correctIndex: 2,
     answerOneImg: "images/MarkHammil.jpg",
     answerOneText: "Mark Hammil",
     oneCorrect: false,
@@ -96,11 +96,46 @@ startBtn.addEventListener("click", function () {
     chooseAnswer()
 });
 
-document.querySelector("#answerOne").addEventListener("click", function(){
+//answer buttons functions
+
+answerSelect.forEach(function(answerBtn){
+  answerBtn.addEventListener("click", function(){
+    console.log("yay")
     questionIndex++
-    console.log(questionIndex)
     chooseAnswer()
+  })
+
 })
+
+// document.querySelector(".answerSelect").addEventListener("click", function(){
+//   questionIndex++
+//   console.log(questionIndex)
+//   chooseAnswer()
+// })
+
+// document.querySelector("#answerOne").addEventListener("click", function(){
+//     questionIndex++
+//     console.log(questionIndex)
+//     chooseAnswer()
+// })
+
+// document.querySelector("#answerTwo").addEventListener("click", function(){
+//   questionIndex++
+//   console.log(questionIndex)
+//   chooseAnswer()
+// })
+
+// document.querySelector("#answerThree").addEventListener("click", function(){
+//   questionIndex++
+//   console.log(questionIndex)
+//   chooseAnswer()
+// })
+
+// document.querySelector("#answerFour").addEventListener("click", function(){
+//   questionIndex++
+//   console.log(questionIndex)
+//   chooseAnswer()
+// })
 
 console.log(theBatman);
 
