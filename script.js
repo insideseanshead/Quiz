@@ -52,8 +52,10 @@ function setTimer() {
     timeLeft--;
     countDown.textContent = "Time Remaining " + timeLeft;
 
-    if(timeLeft === 0){
-      clearInterval;
+    if(timeLeft <= 0){
+
+      clearInterval(timeInt);
+      countDown.textContent = "";
       quizPage.style.display = "none";
       scorePage.style.display = "block";
     }
@@ -102,16 +104,28 @@ var theBatman = [
     
   },
   {
-    question: "Who has not been the voice of Batman?",
-    correctAnswerId: "answerFour",
-    answerOneImg: "images/KevinConroy.jpg",
-    answerOneText: "Kevin Conroy",
-    answerTwoImg: "images/DiedrichBader.jpg",
-    answerTwoText: "Diedrich Bader",
-    answerThreeImg: "images/WillFriedle.jpg",
-    answerThreeText: "Will Fridele",
-    answerFourImg: "images/CaseyKasem.jpg",
-    answerFourText: "Casey Kasem", 
+    question: "Who is the Son of Bruce Wayne?",
+    correctAnswerId: "answerOne",
+    answerOneImg: "images/damien.jpg",
+    answerOneText: "Damien",
+    answerTwoImg: "images/dick.jpg",
+    answerTwoText: "Dick",
+    answerThreeImg: "images/jason.jpg",
+    answerThreeText: "Jason",
+    answerFourImg: "images/tim.jpg",
+    answerFourText: "Tim", 
+  },
+  {
+    question: "Who wrote the soundtrack for Tim Burtons 1989 Batman film?",
+    correctAnswerId: "answerTwo",
+    answerOneImg: "images/u2.jpg",
+    answerOneText: "U2",
+    answerTwoImg: "images/prince.jpg",
+    answerTwoText: "Prince",
+    answerThreeImg: "images/seal.jpg",
+    answerThreeText: "Seal",
+    answerFourImg: "images/oingoBoingo.jpg",
+    answerFourText: "Oingo Boingo", 
   }
 ];
 

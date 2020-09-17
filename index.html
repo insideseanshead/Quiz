@@ -3,22 +3,26 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+    <link href="https://fonts.googleapis.com/css2?family=Fjalla+One&family=Ranchers&display=swap" rel="stylesheet">
+     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
     <link rel="stylesheet" href="styles.css">
-    <title>Document</title>
+    <title>Batman Quiz</title>
 </head>
 <body>
     <header>
-
+        <h1 class="text-center">Batman Quiz Game</h1>
     </header>
-    <div class ="startScreen"><button id="start">Start</button></div>
+    <div class ="startScreen">
+        
+       
+            <button class = "startButton" id="start">Start</button>
+        
+    </div>
     <div class="quizPage">
-        <div class ="row timer">
-            <div class="col-12"><h2 class ="countDown"></h2></div>
-        </div>
+        
         <div class="theQuestion">
             <div class="container">
-            <h1 class="display-4" id=theQuestion></h1>
+            <h2 class="display-4" id=theQuestion></h2>
             </div>
         </div>
         <div class="container quizArea">
@@ -26,31 +30,38 @@
             
             <div class="row">
                 <div class="col-6 answerSelect" id="answerOne">
-                    <img id="imgOne" src="https://www.placecage.com/350/350" alt="..." class="img-thumbnail">
-                    <p id=pOne>Text</p>
+                    <img id="imgOne" src="" alt="..." class="img-thumbnail">
+                    
+                    <p  id=pOne>Text</p>
                 </div>
                 <div class="col-6 answerSelect" id="answerTwo">
-                    <img id="imgTwo" src="https://www.placecage.com/350/350" alt="..." class="img-thumbnail">
+                    <img id="imgTwo" src="" alt="..." class="img-thumbnail">
                     <p id="pTwo">Text</p>
                 </div>
             </div>
             <div class="row">
                 <div class="col-6 answerSelect" id="answerThree">
-                    <img id="imgThree" src="https://www.placecage.com/350/350" alt="..." class="img-thumbnail">
+                    <img id="imgThree" src="" alt="..." class="img-thumbnail">
                     <p id="pThree">Text</p>
                 </div>
                 <div class="col-6 answerSelect" id="answerFour">
-                    <img id="imgFour" src="https://www.placecage.com/350/350" alt="..." class="img-thumbnail">
+                    <img id="imgFour" src="" alt="..." class="img-thumbnail">
                     <p id="pFour">Text</p>
                 </div>
             </div>
             </div>
         </div>
+        <div class ="row timer">
+            <div class="col-12 text-center"><h2 class ="countDown"></h2></div>
+        </div>
     </div><!--end Questions-->
 
     <div class="scorePage">
-        <h3>TOP SCORES</h3>
-        
+        <div class= "row scoreCard">
+            <div class="col-6 offset-3">
+                <h3>TOP SCORES</h3>
+            </div>
+        </div>  
     </div><!-- end score page-->
         
     <div class="gameOver">
