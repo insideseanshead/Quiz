@@ -5,18 +5,9 @@ var scorePage = document.querySelector('.scorePage')
 var gameOver = document.querySelector('.gameOver')
 
 
+
+
 var countDown = document.querySelector('.countDown')
-
-// log high scores
-
-var score = localStorage.getItem('scores');
-
-if(score){
-  score = JSON.parse(score);
-} else {
-  score = [];
-}
-
 
 
 
@@ -60,8 +51,15 @@ function setTimer() {
       scorePage.style.display = "block";
     }
 
+    if(questionIndex > theBatman.length){
+      clearInterval(timeInt);
+      countDown.textContent = "";
+    }
+
   }, 1000)
 }
+
+
 
 // create an array of objects which consists of questions and answers.
 
@@ -191,8 +189,8 @@ answerSelect.forEach(function(answerBtn){
       //open score page.
       // var userScore = timeLeft;
       
-      quizPage.style.display="none";
-      scorePage.style.display="block"
+     
+      
       youWin()
     }
   })
@@ -201,19 +199,58 @@ answerSelect.forEach(function(answerBtn){
 
 
 function youWin(){
+  quizPage.style.display="none";
+  scorePage.style.display="block"
+  
+  
+
   var userScore = timeLeft;
   var playerInfo = prompt(("Please enter your name."))
-  var playerObject = {
+  var scoreObject = {
     playerName: playerInfo,
     playerScore: userScore
   }
 
-  score.push(playerObject);
+  score.push(scoreObject);
 
   localStorage.setItem('scores', JSON.stringify(score))
 
 
 }
 
+var playerScore = []
+
+playerScore.push(scoreObject);
+
+localStorage.setItem9("playerscore", JSON.stringify(playerScore));
+
+function retrieveScores(){
+    var localScores = JSON.parse(localStorage.getItem("playerScore"))
+    console.log(retrieveScores)
+  localScores.forEach(function(scoreObject){
+    var scoreBoard = document.createElement("p");
+    scoreBoard.textContent= `${scoreObject.playerInfo} - ${scoreObject.userScore}`
+    document.querySelector(".scoreCard").appendChild(scoreBoard)
+  })
+}
+
+
+// log high scores
+
+// var playerScore = []
+
+// var score = localStorage.getItem('scores');
+
+// if(score){
+//   score = JSON.parse(score);
+// } else {
+//   score = [];
+// }
+
+// function logScores(){
+//   var savedScores = document.createElement("p")
+//   savedScores.textContent = `${scoreObject.playerInfo} - ${scoreObject.userScore}`
+// }
+//  logScores()
 
 //
