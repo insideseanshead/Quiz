@@ -13,6 +13,9 @@
     </header>
     <div class ="startScreen"><button id="start">Start</button></div>
     <div class="quizPage">
+        <div class ="row timer">
+            <div class="col-12"><h2 class ="countDown"></h2></div>
+        </div>
         <div class="theQuestion">
             <div class="container">
             <h1 class="display-4" id=theQuestion></h1>
@@ -20,9 +23,7 @@
         </div>
         <div class="container quizArea">
             
-            <div class ="row timer">
-                <div class="col-12"><h2></h2></div>
-            </div>
+            
             <div class="row">
                 <div class="col-6 answerSelect" id="answerOne">
                     <img id="imgOne" src="https://www.placecage.com/350/350" alt="..." class="img-thumbnail">
@@ -48,9 +49,13 @@
     </div><!--end Questions-->
 
     <div class="scorePage">
-        <p>Scores go here at some point.</p>
-    </div>
+        <h3>TOP SCORES</h3>
         
+    </div><!-- end score page-->
+        
+    <div class="gameOver">
+        <p>Better luck next time bat brain.</p>
+    </div>
     <!-- JS -->
     <script src="script.js"></script>
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
