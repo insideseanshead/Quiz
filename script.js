@@ -49,7 +49,7 @@ function setTimer() {
       countDown.textContent = "";
       quizPage.style.display = "none";
       scorePage.style.display = "block";
-    }
+    }         
 
     if(questionIndex > theBatman.length){
       clearInterval(timeInt);
@@ -58,8 +58,44 @@ function setTimer() {
 
   }, 1000)
 }
+ //local scores
+ var score = []
+var scoreObject = ""
+var playerScore = []
 
+playerScore.push(scoreObject);
 
+localStorage.setItem("playerscore", JSON.stringify(playerScore));
+
+// function retrieveScores(){
+//   var localScores = JSON.parse(localStorage.getItem("playerScore"))
+//   console.log(localScores)
+//   console.log(retrieveScores)
+//   if(localScores===null){
+//     localScores=[];
+//   }
+// [{playerInfo: "sean",
+// userScore: 4564,
+// }].forEach(function(scoreObject){
+//   var scoreBoard = document.createElement("p");
+//   scoreBoard.textContent= `${scoreObject.playerInfo} - ${scoreObject.userScore}`
+//   document.querySelector(".scoreCard").appendChild(scoreBoard)
+// })
+// }
+
+function retrieveScores(){
+  var localScores = JSON.parse(localStorage.getItem("playerScore"))
+  console.log(localScores)
+  console.log(retrieveScores)
+  if(localScores===null){
+    localScores=[];
+  }
+playerInfo.forEach(function(scoreObject){
+  var scoreBoard = document.createElement("p");
+  scoreBoard.textContent= `${scoreObject.playerInfo} - ${scoreObject.userScore}`
+  document.querySelector(".scoreCard").appendChild(scoreBoard)
+})
+}
 
 // create an array of objects which consists of questions and answers.
 
@@ -198,6 +234,7 @@ answerSelect.forEach(function(answerBtn){
 })
 
 
+
 function youWin(){
   quizPage.style.display="none";
   scorePage.style.display="block"
@@ -215,24 +252,31 @@ function youWin(){
 
   localStorage.setItem('scores', JSON.stringify(score))
 
-
+  retrieveScores()
 }
 
-var playerScore = []
+// var scoreObject = ""
+// var playerScore = []
 
-playerScore.push(scoreObject);
+// playerScore.push(scoreObject);
 
-localStorage.setItem9("playerscore", JSON.stringify(playerScore));
+// localStorage.setItem("playerscore", JSON.stringify(playerScore));
 
-function retrieveScores(){
-    var localScores = JSON.parse(localStorage.getItem("playerScore"))
-    console.log(retrieveScores)
-  localScores.forEach(function(scoreObject){
-    var scoreBoard = document.createElement("p");
-    scoreBoard.textContent= `${scoreObject.playerInfo} - ${scoreObject.userScore}`
-    document.querySelector(".scoreCard").appendChild(scoreBoard)
-  })
-}
+// function retrieveScores(){
+//     var localScores = JSON.parse(localStorage.getItem("playerScore"))
+//     console.log(localScores)
+//     console.log(retrieveScores)
+//     if(localScores===null){
+//       localScores=[];
+//     }
+//   [playerInfo:].forEach(function(scoreObject){
+//     var scoreBoard = document.createElement("p");
+//     scoreBoard.textContent= `${scoreObject.playerInfo} - ${scoreObject.userScore}`
+//     document.querySelector(".scoreCard").appendChild(scoreBoard)
+//   })
+// }
+
+
 
 
 // log high scores
